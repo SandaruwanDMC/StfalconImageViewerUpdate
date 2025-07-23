@@ -4,6 +4,11 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # Stfalcon ImageViewer Update by SandaruwanDMC.
+
+This is a repackaged and updated version of the popular StfalconImageViewer Android library, originally developed by stfalcon-studio. The original library provides a customizable full-screen image viewer with smooth transition animations, zooming, and swipe-to-dismiss support.
+
+🙏 All credit for the core logic and design goes to the original authors at Stfalcon Studio.
+
 A simple and customizable full-screen image viewer with shared image transition support, "pinch to zoom" and "swipe to dismiss" gestures. Compatible with all of the most popular image processing libraries such as `Picasso`, `Glide` etc.
 Based on [PhotoView](https://github.com/chrisbanes/PhotoView) by [chrisbanes](https://github.com/chrisbanes).
 
