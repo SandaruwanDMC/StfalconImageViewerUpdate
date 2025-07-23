@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'maven-publish'
+
+android {
+    compileSdk 35
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    namespace 'com.stfalcon.imageviewer'
+}
+
+dependencies {
+    api 'androidx.appcompat:appcompat:1.7.1'
+    api 'androidx.transition:transition:1.6.0'
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    implementation 'androidx.activity:activity-ktx:1.10.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.SandaruwanDMC'
+                artifactId = 'stfalcon-imageviewer-update'
+                version = '1.0.0'
+            }
+        }
+    }
+}
+
+repositories {
+    maven { url "https://jitpack.io" }
+    google()
+    mavenCentral()
+}
+
+// Avoid Kotlin docs error
+tasks.withType(Javadoc).configureEach {
+    enabled = false
+}
+
+// Remove javadoc related tasks
+tasks.register('javadoc', Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
