@@ -39,15 +39,15 @@ allprojects {
 
 And then add the dependency to the **module `build.gradle`** file:
 ```gradle
-implementation 'com.github.stfalcon-studio:StfalconImageViewer:v1.0.1'
+implementation 'com.github.SandaruwanDMC:StfalconImageViewerUpdate:1.0.0'
 ```
 
 Download via **Maven**:
 ```
 <dependency>
-  <groupId>com.github.stfalcon</groupId>
-  <artifactId>stfalcon-imageviewer</artifactId>
-  <version>latest_version</version>
+  <groupId>com.github.SandaruwanDMC</groupId>
+  <artifactId>stfalcon-imageviewer-update</artifactId>
+  <version>1.0.0</version>
   <type>pom</type>
 </dependency>
 ```
